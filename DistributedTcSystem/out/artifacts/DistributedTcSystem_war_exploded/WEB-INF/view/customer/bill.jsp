@@ -50,12 +50,9 @@
     <p style="font-size: 25px; line-height: 30px; height: 30px;">&nbsp;&nbsp;低费率：3度/元</p>
 </div>
 
-<%--queryBill传来的房间号--%>
-<% String room="roomID";%>
-
 <div class = "row cl">
     <label class="form-label col-5"></label>
-    <p style="font-size: 25px; line-height: 30px; height: 30px;">&nbsp;&nbsp;房间号：<%=room%></p>
+    <p style="font-size: 25px; line-height: 30px; height: 30px;">&nbsp;&nbsp;房间号：<%=application.getAttribute("room")%></p>
 </div>
 
 <div class = "row cl">

@@ -26,22 +26,20 @@
     <script type="text/javascript">
         $(function(){
             $("#submitBtn").click(function(){
-                var TargetTemp=$("input[name=TargetTemp]").val();
-                var FeeRateH=$("input[name=FeeRateH]").val();
-                var FeeRateM=$("input[name=FeeRateM]").val();
-                var FeeRateL=$("input[name=FeeRateL]").val();
+                var data = $("#form").serialize();
 
                 $.ajax({
                     type: "post",
-                    url: "CustomerServlet?method=SetTemp",
+                    url: "CustomerServlet?method=SetWind",
                     dataType: "text", //返回数据类型
-                    data:{"TargetTemp":TargetTemp},
+                    data:data,
                     success: function(msg){
-                        if("setError" == msg){
-                            $.messager.alert("消息提醒", "设置错误!", "warning");
-                        } else if("setSuccess" == msg){
-                            $.messager.alert("消息提醒", "设置成功!", "warning");
-                        }
+                        $.messager.alert("消息提醒", "设置成功!", "warning");
+                        // if("setError" == msg){
+                        //     $.messager.alert("消息提醒", "设置错误!", "warning");
+                        // } else if("setSuccess" == msg){
+                        //     $.messager.alert("消息提醒", "设置成功!", "warning");
+                        // }
                     }
 
                 });

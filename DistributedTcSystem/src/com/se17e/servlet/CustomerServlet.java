@@ -25,26 +25,22 @@ public class CustomerServlet extends HttpServlet {
 
             //返回初始化消息
             response.getWriter().write(msg);
-        }
-        else if(method.equalsIgnoreCase("SetTemp")){
+        } else if(method.equalsIgnoreCase("SetTemp")){
             int TargetTemp = Integer.parseInt(request.getParameter("TargetTemp"));
             TempChange temp = new TempChange(TargetTemp);
 
-            String msg = CustomerService.setTemp(temp)? "setSuccess":"setError";
+            //如何将获取到的房间号传递到这
+            String msg = CustomerService.setTemp(temp, "roomID")? "setSuccess":"setError";
 
+            msg = "setSuccess";
             response.getWriter().write(msg);
-        }
-        else if(method.equalsIgnoreCase("QueryBill")) {
-            //创建调度对象和服务对象
-            boolean initSche = SchedulingService.init();
-            boolean initServed = ServedService.init();
-//            调度对象中初始化等待队列和服务队列
-            String msg = (initSche == true && initServed == true) ? "initSuccess":"initError";
-//            String msg = "initSuccess";
-//            返回初始化消息
+        } else if(method.equalsIgnoreCase("SetWind")){
+            String msg = "setSuccess";
             response.getWriter().write(msg);
-        }else if(method.equalsIgnoreCase("Bill")) {
-            String msg = "query";
+        } else if(method.equalsIgnoreCase("QueryBill")) {
+            String msg = "success";
+            String room = request.getParameter("roomID");
+            getServletContext().setAttribute("room", room);
             response.getWriter().write(msg);
         }
     }

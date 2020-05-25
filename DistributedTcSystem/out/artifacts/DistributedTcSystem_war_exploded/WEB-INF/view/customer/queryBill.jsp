@@ -25,28 +25,42 @@
 
     <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 
+
+<%--    <script type="text/javascript">--%>
+<%--        function fun()--%>
+<%--        {--%>
+<%--            var roomid = document.getElementById("roomID").value;--%>
+
+<%--            $.ajax({--%>
+<%--                type : "post",--%>
+<%--                url : "CustomerFunServlet?method=roomID",--%>
+<%--                data : roomid,--%>
+<%--                dataText : "text",--%>
+<%--                success : function(msg) {--%>
+
+<%--                }--%>
+<%--            })--%>
+<%--        }--%>
+<%--    </script>--%>
+
+
     <script type="text/javascript"> //跳转到bill.jsp
         $(function(){
             $("#queryBtn").click(function(){
 
                 var data = $("#form").serialize();
+                // var roomid = document.getElementById("roomID").value;
 
                 $.ajax({
                     type: "post",
-                    url: "CustomerServlet?method=Bill",
+                    url: "CustomerServlet?method=QueryBill",
                     data: data,
                     dataType: "text", //返回数据类型
                     success: function(msg){ //跳转到详单页面
-
-                            window.location.href = "CustomerFunServlet?method=toBillView";
-                            if("query" == msg){
-                                window.location.href = "CustomerFunServlet?method=toBillView";
-                            } else {
-                                window.location.href = "CustomerFunServlet?method=toBillView";
-                            }
-                        }
-                    });
+                        window.location.href = "CustomerFunServlet?method=toBillView";
+                    }
                 });
+            });
 
                 //设置复选框
                 $(".skin-minimal input").iCheck({
@@ -58,7 +72,7 @@
 </head>
 
 <%--<form id="form" class="form form-horizontal" method="post">--%>
-<form action="bill.jsp" class="form form-horizontal" method="post">
+<form id="form" class="form form-horizontal" method="post">
     <div class="row cl">
         <label class="form-label col-5"></label>
         <div class="formControls col-5">

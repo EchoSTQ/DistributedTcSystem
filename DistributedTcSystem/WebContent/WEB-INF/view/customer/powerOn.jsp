@@ -50,11 +50,7 @@
                     type: "post",
                     url: "CustomerServlet?method=PowerOn",
                     success: function(msg){
-                        if("initError" == msg){
-                            $.messager.alert("消息提醒", "空调关闭失败!", "warning");
-                        } else if("initSuccess" == msg){
-                            $.messager.alert("消息提醒", "空调关闭成功!", "warning");
-                        }
+                        $.messager.alert("消息提醒", "空调关闭成功!", "warning");
                     }
                 });
             })

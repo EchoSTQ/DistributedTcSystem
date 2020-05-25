@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>分布式温控系统  管理员后台</title>
+    <title>分布式温控系统  用户界面</title>
     <link rel="shortcut icon" href="favicon.ico"/>
     <link rel="bookmark" href="favicon.ico"/>
     <link rel="stylesheet" type="text/css" href="easyui/css/default.css" />

@@ -1,18 +1,17 @@
 package com.se17e.dao.impl;
 
 import com.se17e.bean.TempChange;
-import com.se17e.bean.TempChange;
 import com.se17e.dao.inter.CustomerDaoInter;
 import com.se17e.util.DBUtil;
 
 public class CustomerDaoImpl implements CustomerDaoInter {
 
 	@Override
-	public boolean setCentralAcPara(TempChange temp) {
+	public boolean setTargetTemp(TempChange temp, String roomID) {
 		try {
-			String sql = "update cacpara set mode=?,speed=?,temphighlimit=?,"
-					+ "templowlimit=?,defaulttargettemp=?,feerateh=?,"
-					+ "feeratem=?,feeratel=? where id=1;";
+			//更新用户目标温度，id为用户房间号
+			//sql查询语句里变量名待定
+			String sql = "update cacpara set targettemp = ? where id = " + roomID + ";";
 			int result = DBUtil.executeUpdate(sql, new Object[]{temp.getTargetTemp(),});
 			
 			return result == 1;

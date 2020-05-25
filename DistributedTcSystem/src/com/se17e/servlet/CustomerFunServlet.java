@@ -13,6 +13,7 @@ public class CustomerFunServlet extends HttpServlet {
 		String method = request.getParameter("method");
 		if("toBillView".equalsIgnoreCase(method)){ //跳转到详单页面
 			request.getRequestDispatcher("/WEB-INF/view/customer/bill.jsp").forward(request, response);
+			getServletContext().setAttribute("roomID", "roomid");
 		}
 	}
 

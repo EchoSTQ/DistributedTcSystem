@@ -26,22 +26,20 @@
     <script type="text/javascript">
         $(function(){
             $("#submitBtn").click(function(){
-                var TargetTemp=$("input[name=TargetTemp]").val();
-                var FeeRateH=$("input[name=FeeRateH]").val();
-                var FeeRateM=$("input[name=FeeRateM]").val();
-                var FeeRateL=$("input[name=FeeRateL]").val();
+                var data = $("#form").serialize();
 
                 $.ajax({
                     type: "post",
                     url: "CustomerServlet?method=SetTemp",
                     dataType: "text", //返回数据类型
-                    data:{"TargetTemp":TargetTemp},
+                    data:data,
                     success: function(msg){
-                        if("setError" == msg){
-                            $.messager.alert("消息提醒", "设置错误!", "warning");
-                        } else if("setSuccess" == msg){
-                            $.messager.alert("消息提醒", "设置成功!", "warning");
-                        }
+                        $.messager.alert("消息提醒", "设置成功!", "warning");
+                        // if("setError" == msg){
+                        //     $.messager.alert("消息提醒", "设置错误!", "warning");
+                        // } else if("setSuccess" == msg){
+                        //     $.messager.alert("消息提醒", "设置成功!", "warning");
+                        // }
                     }
 
                 });
@@ -92,35 +90,12 @@
 </div>
 
 <form id="form" class="form form-horizontal" method="post">
-
     <div class="row cl">
-        <label class="form-label col-5"><i class="Hui-iconfont">&#xe60e;</i></label>
+        <label class="form-label col-5"></label>
         <div class="formControls col-5">
             <input id="" name="TargetTemp" type="text" placeholder="目标温度（度） " class="input-text size-L" style="width: 300px;">
         </div>
     </div>
-
-<%--    <div class="row cl">--%>
-<%--        <label class="form-label col-5"><i class="Hui-iconfont">&#xe60e;</i></label>--%>
-<%--        <div class="formControls col-5">--%>
-<%--            <input id="" name="FeeRateH" type="text" placeholder="高费率（分钟/元）" class="input-text size-L" style="width: 300px;">--%>
-<%--        </div>--%>
-<%--    </div>--%>
-
-<%--    <div class="row cl">--%>
-<%--        <label class="form-label col-5"><i class="Hui-iconfont">&#xe60e;</i></label>--%>
-<%--        <div class="formControls col-5">--%>
-<%--            <input id="" name="FeeRateM" type="text" placeholder="中费率（分钟/元）" class="input-text size-L" style="width: 300px;">--%>
-<%--        </div>--%>
-<%--    </div>--%>
-
-<%--    <div class="row cl">--%>
-<%--        <label class="form-label col-5"><i class="Hui-iconfont">&#xe60e;</i></label>--%>
-<%--        <div class="formControls col-5">--%>
-<%--            <input id="" name="FeeRateL" type="text" placeholder="低费率（分钟/元）" class="input-text size-L" style="width: 300px;">--%>
-<%--        </div>--%>
-<%--    </div>--%>
-
 
     <div class="row">
         <div class="formControls col-8 col-offset-5">

@@ -16,47 +16,4 @@ public class TempChange {
     public int getTargetTemp() {
         return TargetTemp;
     }
-
-//    public int getSpeed() {
-//        return speed;
-//    }
-//    public void setSpeed(int speed) {
-//        this.speed = speed;
-//    }
-//    public int getTempHighLimit() {
-//        return tempHighLimit;
-//    }
-//    public void setTempHighLimit(int tempHighLimit) {
-//        this.tempHighLimit = tempHighLimit;
-//    }
-//    public int getTempLowLimit() {
-//        return tempLowLimit;
-//    }
-//    public void setTempLowLimit(int tempLowLimit) {
-//        this.tempLowLimit = tempLowLimit;
-//    }
-//    public int getDefaultTargetTemp() {
-//        return defaultTargetTemp;
-//    }
-//    public void setDefaultTargetTemp(int defaultTargetTemp) {
-//        this.defaultTargetTemp = defaultTargetTemp;
-//    }
-//    public int getFeeRateH() {
-//        return FeeRateH;
-//    }
-//    public void setFeeRateH(int feeRateH) {
-//        FeeRateH = feeRateH;
-//    }
-//    public int getFeeRateM() {
-//        return FeeRateM;
-//    }
-//    public void setFeeRateM(int feeRateM) {
-//        FeeRateM = feeRateM;
-//    }
-//    public int getFeeRateL() {
-//        return FeeRateL;
-//    }
-//    public void setFeeRateL(int feeRateL) {
-//        FeeRateL = feeRateL;
-//    }
 }
