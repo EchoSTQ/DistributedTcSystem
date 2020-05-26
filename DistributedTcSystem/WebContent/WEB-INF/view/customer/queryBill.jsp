@@ -43,7 +43,6 @@
 <%--        }--%>
 <%--    </script>--%>
 
-
     <script type="text/javascript"> //跳转到bill.jsp
         $(function(){
             $("#queryBtn").click(function(){
@@ -62,12 +61,12 @@
                 });
             });
 
-                //设置复选框
-                $(".skin-minimal input").iCheck({
-                    radioClass: 'iradio-blue',
-                    increaseArea: '25%'
-                });
-            })
+            // 设置复选框
+            $(".skin-minimal input").iCheck({
+                radioClass: 'iradio-blue',
+                increaseArea: '25%'
+            });
+        })
     </script>
 </head>
 

@@ -36,12 +36,7 @@
                     dataType: "text", //返回数据类型
                     data:data,
                     success: function(msg){
-                        $.messager.alert("消息提醒", "设置成功!", "warning");
-                        // if("setError" == msg){
-                        //     $.messager.alert("消息提醒", "设置错误!", "warning");
-                        // } else if("setSuccess" == msg){
-                        //     $.messager.alert("消息提醒", "设置成功!", "warning");
-                        // }
+                        window.location.href = "CustomerFunServlet?method=toTempView";
                     }
 
                 });
@@ -84,11 +79,6 @@
 <div class = "row cl">
     <label class="form-label col-5"></label>
     <p style="font-size: 25px; line-height: 30px; height: 30px;">&nbsp;&nbsp;最低温度：18度</p>
-</div>
-
-<div class = "row cl">
-    <label class="form-label col-5"></label>
-    <p style="font-size: 25px; line-height: 30px; height: 30px;">&nbsp;&nbsp;当前温度</p>
 </div>
 
 <form id="form" class="form form-horizontal" method="post">

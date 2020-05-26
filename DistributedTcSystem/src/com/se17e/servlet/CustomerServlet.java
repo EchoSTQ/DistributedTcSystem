@@ -26,15 +26,21 @@ public class CustomerServlet extends HttpServlet {
             //返回初始化消息
             response.getWriter().write(msg);
         } else if(method.equalsIgnoreCase("SetTemp")){
+            String targetTemp = request.getParameter("TargetTemp");
+            getServletContext().setAttribute("targetTemp", targetTemp);
+
             int TargetTemp = Integer.parseInt(request.getParameter("TargetTemp"));
             TempChange temp = new TempChange(TargetTemp);
 
             //如何将获取到的房间号传递到这
             String msg = CustomerService.setTemp(temp, "roomID")? "setSuccess":"setError";
-
             msg = "setSuccess";
+
+
             response.getWriter().write(msg);
         } else if(method.equalsIgnoreCase("SetWind")){
+            String targetWind = request.getParameter("TargetWind");
+            getServletContext().setAttribute("targetWind", targetWind);
             String msg = "setSuccess";
             response.getWriter().write(msg);
         } else if(method.equalsIgnoreCase("QueryBill")) {

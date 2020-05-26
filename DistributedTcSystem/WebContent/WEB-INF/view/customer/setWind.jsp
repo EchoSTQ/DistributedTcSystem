@@ -34,12 +34,7 @@
                     dataType: "text", //返回数据类型
                     data:data,
                     success: function(msg){
-                        $.messager.alert("消息提醒", "设置成功!", "warning");
-                        // if("setError" == msg){
-                        //     $.messager.alert("消息提醒", "设置错误!", "warning");
-                        // } else if("setSuccess" == msg){
-                        //     $.messager.alert("消息提醒", "设置成功!", "warning");
-                        // }
+                        window.location.href = "CustomerFunServlet?method=toWindView";
                     }
 
                 });
@@ -84,7 +79,7 @@
     <div class="row cl">
         <label class="form-label col-5"></label>
         <div class="formControls col-5">
-            <input id="" name="TargetTemp" type="text" placeholder="目标风速" class="input-text size-L" style="width: 300px;">
+            <input id="" name="TargetWind" type="text" placeholder="目标风速" class="input-text size-L" style="width: 300px;">
         </div>
     </div>
 
