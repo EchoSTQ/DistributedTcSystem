@@ -56,7 +56,7 @@
                     data: data,
                     dataType: "text", //返回数据类型
                     success: function(msg){ //跳转到详单页面
-                        window.location.href = "CustomerFunServlet?method=toBillView";
+                        window.location.href = "CustomerViewServlet?method=toBillView";
                     }
                 });
             });
@@ -69,6 +69,19 @@
         })
     </script>
 </head>
+
+<br/>
+<p style="font-size: 35px; line-height: 35px; height: 35px;">&nbsp;&nbsp;空调账单查询</p>
+
+<div class = "row cl">
+    <label class="form-label col-5"></label>
+    <p style="font-size: 25px; line-height: 30px; height: 30px;">&nbsp;&nbsp;您的房间号是:roomID</p>
+</div>
+
+<div class = "row cl">
+    <label class="form-label col-5"></label>
+    <p style="font-size: 25px; line-height: 30px; height: 30px;">&nbsp;&nbsp;请确认您的房间号(在下方输入您的房间号)</p>
+</div>
 
 <%--<form id="form" class="form form-horizontal" method="post">--%>
 <form id="form" class="form form-horizontal" method="post">

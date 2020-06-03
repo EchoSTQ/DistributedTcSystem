@@ -34,7 +34,7 @@
                     dataType: "text", //返回数据类型
                     data:data,
                     success: function(msg){
-                        window.location.href = "CustomerFunServlet?method=toWindView";
+                        window.location.href = "CustomerViewServlet?method=toWindView";
                     }
 
                 });

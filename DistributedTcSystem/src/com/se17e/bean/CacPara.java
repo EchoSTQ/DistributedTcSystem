@@ -79,6 +79,5 @@ public class CacPara {
 	public void setFeeRateL(int feeRateL) {
 		FeeRateL = feeRateL;
 	}
-	
-	
+
 }

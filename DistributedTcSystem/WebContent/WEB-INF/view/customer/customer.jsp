@@ -15,7 +15,7 @@
     <script type="text/javascript" src='easyui/js/outlook2.js'> </script>
     <script type="text/javascript">
         var _menus = {"menus":[
-                {"menuid":"1","icon":"","menuname":"空调管理",
+                {"menuid":"1","icon":"","menuname":"空调开关",
                     "menus":[
                         {"menuid":"11","menuname":"开启/关闭空调","icon":"icon-exam","url":"CustomerViewServlet?method=toPowerOnView"}
                     ]

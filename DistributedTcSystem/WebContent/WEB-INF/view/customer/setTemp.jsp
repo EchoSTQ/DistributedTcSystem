@@ -1,3 +1,4 @@
+<%@ page import="com.se17e.bean.TempChange" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -29,14 +30,13 @@
 
                 var data = $("#form").serialize();
 
-                //因为要传递数据，所以文本框内必须要有数据才行，否则ajax不会成功
                 $.ajax({
                     type: "post",
                     url: "CustomerServlet?method=SetTemp",
                     dataType: "text", //返回数据类型
                     data:data,
                     success: function(msg){
-                        window.location.href = "CustomerFunServlet?method=toTempView";
+                        window.location.href = "CustomerViewServlet?method=toTempView";
                     }
 
                 });
@@ -52,9 +52,9 @@
     <title>Insert title here</title>
 </head>
 <body>
+
 <br/>
 <p style="font-size: 35px; line-height: 35px; height: 35px;">&nbsp;&nbsp;空调温度调节</p>
-<%--&nbsp;&nbsp;&nbsp;&nbsp;--%>
 
 <div class = "row cl">
     <label class="form-label col-5"></label>
@@ -79,6 +79,11 @@
 <div class = "row cl">
     <label class="form-label col-5"></label>
     <p style="font-size: 25px; line-height: 30px; height: 30px;">&nbsp;&nbsp;最低温度：18度</p>
+</div>
+
+<div class = "row cl">
+    <label class="form-label col-5"></label>
+    <p style="font-size: 25px; line-height: 30px; height: 30px;">&nbsp;&nbsp;当前温度</p>
 </div>
 
 <form id="form" class="form form-horizontal" method="post">

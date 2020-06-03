@@ -7,8 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.se17e.bean.TempChange;
-import com.se17e.service.SchedulingService;
-import com.se17e.service.ServedService;
+import com.se17e.bean.WindChange;
 import com.se17e.service.CustomerService;
 
 public class CustomerServlet extends HttpServlet {
@@ -17,36 +16,39 @@ public class CustomerServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String method = request.getParameter("method");
         if(method.equalsIgnoreCase("PowerOn")) {
-            //创建调度对象和服务对象
-            boolean initSche = SchedulingService.init();
-            boolean initServed = ServedService.init();
-            //调度对象中初始化等待队列和服务队列
-            String msg = (initSche == true && initServed == true) ? "initSuccess":"initError";
-
+            String msg = "initSuccess";
             //返回初始化消息
             response.getWriter().write(msg);
         } else if(method.equalsIgnoreCase("SetTemp")){
+            //设置web全局上下文，与temp.jsp共享目标温度
             String targetTemp = request.getParameter("TargetTemp");
             getServletContext().setAttribute("targetTemp", targetTemp);
 
+            //设置目标温度
             int TargetTemp = Integer.parseInt(request.getParameter("TargetTemp"));
-            TempChange temp = new TempChange(TargetTemp);
-
-            //如何将获取到的房间号传递到这
-            String msg = CustomerService.setTemp(temp, "roomID")? "setSuccess":"setError";
-            msg = "setSuccess";
-
+            TempChange temp = new TempChange();
+            temp.setTargetTemp(TargetTemp);
+            String msg = CustomerService.setTemp(temp)? "setSuccess":"setError";
 
             response.getWriter().write(msg);
         } else if(method.equalsIgnoreCase("SetWind")){
+            //设置web全局上下文，与wind.jsp共享目标风速
             String targetWind = request.getParameter("TargetWind");
             getServletContext().setAttribute("targetWind", targetWind);
-            String msg = "setSuccess";
+
+            //设置目标风速
+            int TargetWind = Integer.parseInt(request.getParameter("TargetWind"));
+            WindChange wind = new WindChange();
+            wind.setTargetWind(TargetWind);
+            String msg = CustomerService.setWind(wind)? "setSuccess":"setError";
+//            msg = "setSuccess";
             response.getWriter().write(msg);
         } else if(method.equalsIgnoreCase("QueryBill")) {
-            String msg = "success";
+            //设置web全局上下文，与bill.jsp共享房间号
             String room = request.getParameter("roomID");
             getServletContext().setAttribute("room", room);
+
+            String msg = "success";
             response.getWriter().write(msg);
         }
     }
