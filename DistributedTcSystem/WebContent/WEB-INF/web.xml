@@ -9,6 +9,44 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+
+  <servlet>
+    <description></description>
+    <display-name>CustomerServlet</display-name>
+    <servlet-name>CustomerServlet</servlet-name>
+    <servlet-class>com.se17e.servlet.CustomerServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CustomerServlet</servlet-name>
+    <url-pattern>/CustomerServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>CustomerRewarmServlet</display-name>
+    <servlet-name>CustomerRewarmServlet</servlet-name>
+    <servlet-class>com.se17e.servlet.CustomerRewarmServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CustomerRewarmServlet</servlet-name>
+    <url-pattern>/CustomerRewarmServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>CustomerRBillServlet</display-name>
+    <servlet-name>CustomerBillServlet</servlet-name>
+    <servlet-class>com.se17e.servlet.CustomerBillServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CustomerBillServlet</servlet-name>
+    <url-pattern>/CustomerBillServlet</url-pattern>
+  </servlet-mapping>
+
+
   <servlet>
     <description></description>
     <display-name>LoginServlet</display-name>
@@ -31,16 +69,6 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>CustomerFunServlet</display-name>
-    <servlet-name>CustomerFunServlet</servlet-name>
-    <servlet-class>com.se17e.servlet.CustomerFunServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>CustomerFunServlet</servlet-name>
-    <url-pattern>/CustomerFunServlet</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
     <display-name>AdminViewServlet</display-name>
     <servlet-name>AdminViewServlet</servlet-name>
     <servlet-class>com.se17e.servlet.AdminViewServlet</servlet-class>
@@ -59,7 +87,24 @@
     <servlet-name>AdminServlet</servlet-name>
     <url-pattern>/AdminServlet</url-pattern>
   </servlet-mapping>
-
+  <servlet>
+    <display-name>CheckServelet</display-name>
+    <servlet-name>CheckServelet</servlet-name>
+    <servlet-class>com.se17e.servlet.CheckServelet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CheckServelet</servlet-name>
+    <url-pattern>/CheckServelet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <display-name>CheckViewServelet</display-name>
+    <servlet-name>CheckViewServelet</servlet-name>
+    <servlet-class>com.se17e.servlet.CheckViewServelet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CheckViewServelet</servlet-name>
+    <url-pattern>/CheckViewServelet</url-pattern>
+  </servlet-mapping>
   <servlet>
     <description></description>
     <display-name>CustomerViewServlet</display-name>
@@ -70,14 +115,32 @@
     <servlet-name>CustomerViewServlet</servlet-name>
     <url-pattern>/CustomerViewServlet</url-pattern>
   </servlet-mapping>
+<!--  <servlet>-->
+<!--    <description></description>-->
+<!--    <display-name>CustomerServlet</display-name>-->
+<!--    <servlet-name>CustomerServlet</servlet-name>-->
+<!--    <servlet-class>com.se17e.servlet.CustomerServlet</servlet-class>-->
+<!--  </servlet>-->
+<!--  <servlet-mapping>-->
+<!--    <servlet-name>CustomerServlet</servlet-name>-->
+<!--    <url-pattern>/CustomerServlet</url-pattern>-->
+<!--  </servlet-mapping>-->
   <servlet>
-    <description></description>
-    <display-name>CustomerServlet</display-name>
-    <servlet-name>CustomerServlet</servlet-name>
-    <servlet-class>com.se17e.servlet.CustomerServlet</servlet-class>
+    <display-name>ReceptionistServlet</display-name>
+    <servlet-name>ReceptionistServlet</servlet-name>
+    <servlet-class>com.se17e.servlet.ReceptionistServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>CustomerServlet</servlet-name>
-    <url-pattern>/CustomerServlet</url-pattern>
+    <servlet-name>ReceptionistServlet</servlet-name>
+    <url-pattern>/ReceptionistServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <display-name>ReceptionistviewServlet</display-name>
+    <servlet-name>ReceptionistviewServlet</servlet-name>
+    <servlet-class>com.se17e.servlet.ReceptionistviewServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReceptionistviewServlet</servlet-name>
+    <url-pattern>/ReceptionistviewServlet</url-pattern>
   </servlet-mapping>
 </web-app>

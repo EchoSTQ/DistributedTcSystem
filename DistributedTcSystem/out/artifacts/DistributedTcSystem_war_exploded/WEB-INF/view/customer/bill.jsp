@@ -37,37 +37,27 @@
 
 <div class = "row cl">
     <label class="form-label col-5"></label>
-    <p style="font-size: 25px; line-height: 30px; height: 30px;">&nbsp;&nbsp;高费率：1度/元</p>
+    <p style="font-size: 25px; line-height: 30px; height: 30px;">高费率：1度/元 中费率：2度/元 低费率：3度/元</p>
 </div>
 
 <div class = "row cl">
     <label class="form-label col-5"></label>
-    <p style="font-size: 25px; line-height: 30px; height: 30px;">&nbsp;&nbsp;中费率：2度/元</p>
+    <p style="font-size: 25px; line-height: 30px; height: 30px;">房间号：<%=application.getAttribute("room")%></p>
 </div>
 
 <div class = "row cl">
     <label class="form-label col-5"></label>
-    <p style="font-size: 25px; line-height: 30px; height: 30px;">&nbsp;&nbsp;低费率：3度/元</p>
+    <p style="font-size: 25px; line-height: 30px; height: 30px;">使用时间(s)：<%=application.getAttribute("duration")%></p>
 </div>
 
 <div class = "row cl">
     <label class="form-label col-5"></label>
-    <p style="font-size: 25px; line-height: 30px; height: 30px;">&nbsp;&nbsp;房间号：<%=application.getAttribute("room")%></p>
+    <p style="font-size: 25px; line-height: 30px; height: 30px;">度数(度)：<%=application.getAttribute("degree")%></p>
 </div>
 
 <div class = "row cl">
     <label class="form-label col-5"></label>
-    <p style="font-size: 25px; line-height: 30px; height: 30px;">&nbsp;&nbsp;使用时间</p>
-</div>
-
-<div class = "row cl">
-    <label class="form-label col-5"></label>
-    <p style="font-size: 25px; line-height: 30px; height: 30px;">&nbsp;&nbsp;度数</p>
-</div>
-
-<div class = "row cl">
-    <label class="form-label col-5"></label>
-    <p style="font-size: 25px; line-height: 30px; height: 30px;">&nbsp;&nbsp;总费用</p>
+    <p style="font-size: 25px; line-height: 30px; height: 30px;">总费用(元)：<%=application.getAttribute("cost")%></p>
 </div>
 </body>
 </html>

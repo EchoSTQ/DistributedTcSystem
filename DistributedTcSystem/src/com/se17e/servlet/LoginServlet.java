@@ -11,8 +11,13 @@ import com.se17e.service.LoginService;
 
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
+	public static String roomiid = "";
+
 	private LoginService service = new LoginService();
+
+	public String getRoomid() {
+		return roomiid;
+	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		login(request, response);
@@ -25,6 +30,8 @@ public class LoginServlet extends HttpServlet {
 	private void login(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		//获取用户输入的身份证号
 		String IDnumber = request.getParameter("IDnumber");
+		roomiid = IDnumber;
+
 		//获取用户输入的密码
 		String pwd = request.getParameter("password");
 		//获取用户输入的验证码
@@ -48,7 +55,16 @@ public class LoginServlet extends HttpServlet {
 		user.setType(type);
 		
 		//查询管理员是否存在，若存在则进入管理员页面
-		if(type == 3) {
+		if(type == 4){
+			User loginUser = service.checkManager(user);
+			if(loginUser == null) {
+				msg = "loginError";
+			}else {	//正确
+				msg = "manager";
+				//将该用户名保存到session中
+				request.getSession().setAttribute("user", loginUser);
+			}
+		} else if(type == 3) {
 			User loginUser = service.checkAdmin(user);
 			if(loginUser == null) {
 				msg = "loginError";
@@ -57,7 +73,7 @@ public class LoginServlet extends HttpServlet {
 				//将该用户名保存到session中
 				request.getSession().setAttribute("user", loginUser);
 			}
-		}else if(type == 2) {
+		} else if(type == 2) {
 			User loginUser = service.checkCustomer(user);
 			if(loginUser == null) {
 				msg = "loginError";
@@ -71,13 +87,15 @@ public class LoginServlet extends HttpServlet {
 			if(loginUser == null) {
 				msg = "loginError";
 			}else {	//正确
-				msg = "receptionlist";
+				msg = "receptionist";
 				//将该用户名保存到session中
 				request.getSession().setAttribute("user", loginUser);
 			}
 		}
 		//返回登录消息
 		response.getWriter().write(msg);
+		
+		
 //		}
 	}
 

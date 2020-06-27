@@ -1,5 +1,8 @@
 package com.se17e.servlet;
 
+import com.se17e.bean.RcPara;
+import com.se17e.service.AdminService;
+
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -17,6 +20,8 @@ public class AdminViewServlet extends HttpServlet {
 			request.getRequestDispatcher("/WEB-INF/view/admin/setPara.jsp").forward(request, response);
 		} else if(method.equalsIgnoreCase("toServeOnView")){
 			request.getRequestDispatcher("/WEB-INF/view/admin/serveOn.jsp").forward(request, response);
+		} else if(method.equalsIgnoreCase("toCheckStateView")){
+			request.getRequestDispatcher("/WEB-INF/view/admin/checkState.jsp").forward(request, response);
 		}
 	}
 

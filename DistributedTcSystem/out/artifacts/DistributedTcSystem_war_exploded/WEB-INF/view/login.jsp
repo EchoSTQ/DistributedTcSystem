@@ -55,6 +55,8 @@
 						window.location.href = "SystemServlet?method=toCustomerView";
 					} else if("receptionist" == msg){
 						window.location.href = "SystemServlet?method=toReceptionistView";
+					} else if("manager"== msg){
+						window.location.href = "SystemServlet?method=toManagerView";
 					}
 				}
 				
@@ -110,6 +112,10 @@
 				<input type="radio" id="radio-1" name="type" value="1" />
 				<label for="radio-3">前台</label>
 			</div>
+		    <div class="radio-box">
+			    <input type="radio" id="radio-4" name="type" value="4" />
+			    <label for="radio-4">酒店管理员</label>
+		    </div>
 		  </div>
 	      
 	      <div class="row">

@@ -18,6 +18,7 @@ public class CustomerViewServlet extends HttpServlet {
         } else if(method.equalsIgnoreCase("toSetWindView")) {//空调风速主页面
             request.getRequestDispatcher("/WEB-INF/view/customer/setWind.jsp").forward(request, response);
         } else if(method.equalsIgnoreCase("toQueryBillView")){//查询详单主页面
+            getServletContext().setAttribute("loginRoomID", LoginServlet.roomiid);
             request.getRequestDispatcher("/WEB-INF/view/customer/queryBill.jsp").forward(request, response);
         } else if(method.equalsIgnoreCase("toBillView")){//详单页面
             request.getRequestDispatcher("/WEB-INF/view/customer/bill.jsp").forward(request, response);
@@ -31,5 +32,4 @@ public class CustomerViewServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
     }
-
 }

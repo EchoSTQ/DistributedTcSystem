@@ -48,7 +48,7 @@
             $("#closeBtn").click(function(){
                 $.ajax({
                     type: "post",
-                    url: "CustomerServlet?method=PowerOn",
+                    url: "CustomerServlet?method=PowerOff",
                     success: function(msg){
                         $.messager.alert("消息提醒", "空调关闭成功!", "warning");
                     }
@@ -60,6 +60,7 @@
 
 <br/>
 <p style="font-size: 35px; line-height: 35px; height: 35px;">&nbsp;&nbsp;空调开关</p>
+
 
 <body>
 <div class="row">

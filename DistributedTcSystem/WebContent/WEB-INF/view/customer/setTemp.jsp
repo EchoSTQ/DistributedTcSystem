@@ -36,7 +36,13 @@
                     dataType: "text", //返回数据类型
                     data:data,
                     success: function(msg){
-                        window.location.href = "CustomerViewServlet?method=toTempView";
+                        if("setError" == msg){
+                            $.messager.alert("消息提醒", "温度设置失败(当前系统繁忙或检查您的输入)!", "warning");
+                        } else if("setSuccess" == msg){
+                            // $.messager.alert("消息提醒", "风速设置成功!", "warning");
+                            window.location.href = "CustomerViewServlet?method=toTempView";
+                        }
+
                     }
 
                 });
@@ -58,32 +64,17 @@
 
 <div class = "row cl">
     <label class="form-label col-5"></label>
-    <p style="font-size: 25px; line-height: 30px; height: 30px;">&nbsp;&nbsp;高费率：1度/元</p>
+    <p style="font-size: 25px; line-height: 30px; height: 30px;">高费率：1度/元 中费率：2度/元 低费率：3度/元</p>
 </div>
 
 <div class = "row cl">
     <label class="form-label col-5"></label>
-    <p style="font-size: 25px; line-height: 30px; height: 30px;">&nbsp;&nbsp;中费率：2度/元</p>
+    <p style="font-size: 25px; line-height: 30px; height: 30px;">最高温度：25度 最低温度：18度</p>
 </div>
 
 <div class = "row cl">
     <label class="form-label col-5"></label>
-    <p style="font-size: 25px; line-height: 30px; height: 30px;">&nbsp;&nbsp;低费率：3度/元</p>
-</div>
-
-<div class = "row cl">
-    <label class="form-label col-5"></label>
-    <p style="font-size: 25px; line-height: 30px; height: 30px;">&nbsp;&nbsp;最高温度：25度</p>
-</div>
-
-<div class = "row cl">
-    <label class="form-label col-5"></label>
-    <p style="font-size: 25px; line-height: 30px; height: 30px;">&nbsp;&nbsp;最低温度：18度</p>
-</div>
-
-<div class = "row cl">
-    <label class="form-label col-5"></label>
-    <p style="font-size: 25px; line-height: 30px; height: 30px;">&nbsp;&nbsp;当前温度</p>
+    <p style="font-size: 25px; line-height: 30px; height: 30px;">当前温度</p>
 </div>
 
 <form id="form" class="form form-horizontal" method="post">

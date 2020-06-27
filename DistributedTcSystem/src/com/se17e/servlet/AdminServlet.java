@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.se17e.bean.CacPara;
+import com.se17e.bean.RcPara;
 import com.se17e.service.SchedulingService;
 import com.se17e.service.ServedService;
 import com.se17e.service.AdminService;
@@ -52,6 +53,13 @@ public class AdminServlet extends HttpServlet {
 			request.setAttribute("speed", speed);
 			
 			response.getWriter().write(msg);
+		}
+		else if(method.equalsIgnoreCase("toRoomStateView")){
+			String roomID = request.getParameter("roomID");
+			RcPara rcPara = AdminService.getRoomState(roomID);
+			request.setAttribute("roomState", rcPara);
+			System.out.println(rcPara);
+			request.getRequestDispatcher("/WEB-INF/view/admin/roomState.jsp").forward(request, response);
 		}
 	}
 

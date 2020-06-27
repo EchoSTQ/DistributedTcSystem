@@ -2,8 +2,9 @@ package com.se17e.bean;
 
 public class WindChange {
 
-    private int CurrentWind = 25;//当前风速，初始化为？
-    private int TargetWind = 25;//目标风速，初始化为？
+    //风速用0，1，2分别代表低，中，高
+    private int CurrentWind = 0;//当前风速
+    private int TargetWind = 0;//目标风速
 
     public WindChange() {
         super();

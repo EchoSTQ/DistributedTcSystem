@@ -29,8 +29,12 @@
 							"menus":[
 									{"menuid":"31","menuname":"开启服务","icon":"icon-user-teacher","url":"AdminViewServlet?method=toServeOnView"},
 								]
-						}
-					
+						},
+                        {"menuid":"4","icon":"","menuname":"监控空调",
+                            "menus":[
+                                    {"menuid":"41","menuname":"查看各房间空调状态","icon":"icon-user-teacher","url":"AdminViewServlet?method=toCheckStateView"},
+                                ]
+                        }
 				]};
 
 

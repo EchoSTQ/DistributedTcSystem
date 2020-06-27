@@ -26,47 +26,47 @@
     <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 
 
-<%--    <script type="text/javascript">--%>
-<%--        function fun()--%>
-<%--        {--%>
-<%--            var roomid = document.getElementById("roomID").value;--%>
+    <%--    <script type="text/javascript">--%>
+    <%--        function fun()--%>
+    <%--        {--%>
+    <%--            var roomid = document.getElementById("roomID").value;--%>
 
-<%--            $.ajax({--%>
-<%--                type : "post",--%>
-<%--                url : "CustomerFunServlet?method=roomID",--%>
-<%--                data : roomid,--%>
-<%--                dataText : "text",--%>
-<%--                success : function(msg) {--%>
+    <%--            $.ajax({--%>
+    <%--                type : "post",--%>
+    <%--                url : "CustomerFunServlet?method=roomID",--%>
+    <%--                data : roomid,--%>
+    <%--                dataText : "text",--%>
+    <%--                success : function(msg) {--%>
 
-<%--                }--%>
-<%--            })--%>
-<%--        }--%>
-<%--    </script>--%>
+    <%--                }--%>
+    <%--            })--%>
+    <%--        }--%>
+    <%--    </script>--%>
 
     <script type="text/javascript"> //跳转到bill.jsp
-        $(function(){
-            $("#queryBtn").click(function(){
+    $(function(){
+        $("#queryBtn").click(function(){
 
-                var data = $("#form").serialize();
-                // var roomid = document.getElementById("roomID").value;
+            var data = $("#form").serialize();
+            // var roomid = document.getElementById("roomID").value;
 
-                $.ajax({
-                    type: "post",
-                    url: "CustomerServlet?method=QueryBill",
-                    data: data,
-                    dataType: "text", //返回数据类型
-                    success: function(msg){ //跳转到详单页面
-                        window.location.href = "CustomerViewServlet?method=toBillView";
-                    }
-                });
+            $.ajax({
+                type: "post",
+                url: "CustomerServlet?method=QueryBill",
+                data: data,
+                dataType: "text", //返回数据类型
+                success: function(msg){ //跳转到详单页面
+                    window.location.href = "CustomerViewServlet?method=toBillView";
+                }
             });
+        });
 
-            // 设置复选框
-            $(".skin-minimal input").iCheck({
-                radioClass: 'iradio-blue',
-                increaseArea: '25%'
-            });
-        })
+        // 设置复选框
+        $(".skin-minimal input").iCheck({
+            radioClass: 'iradio-blue',
+            increaseArea: '25%'
+        });
+    })
     </script>
 </head>
 
@@ -75,12 +75,12 @@
 
 <div class = "row cl">
     <label class="form-label col-5"></label>
-    <p style="font-size: 25px; line-height: 30px; height: 30px;">&nbsp;&nbsp;您的房间号是:roomID</p>
+    <p style="font-size: 25px; line-height: 30px; height: 30px;">您的房间号是:<%=application.getAttribute("loginRoomID")%></p>
 </div>
 
 <div class = "row cl">
     <label class="form-label col-5"></label>
-    <p style="font-size: 25px; line-height: 30px; height: 30px;">&nbsp;&nbsp;请确认您的房间号(在下方输入您的房间号)</p>
+    <p style="font-size: 25px; line-height: 30px; height: 30px;">请确认您的房间号(在下方输入您的房间号)</p>
 </div>
 
 <%--<form id="form" class="form form-horizontal" method="post">--%>

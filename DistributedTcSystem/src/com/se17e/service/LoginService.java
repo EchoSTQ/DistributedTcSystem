@@ -30,5 +30,13 @@ public class LoginService {
 		
 		return searchUser;
 	}
+
+	public User checkManager(User user) {
+		User searchUser = (User) dao.getAdminObject(
+				"SELECT * FROM manager WHERE IDnumber=? AND password=?",
+				new Object[]{user.getIDnumber(), user.getPassword()});
+
+		return searchUser;
+	}
 	
 }

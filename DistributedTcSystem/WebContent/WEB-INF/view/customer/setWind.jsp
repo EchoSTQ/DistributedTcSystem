@@ -34,9 +34,13 @@
                     dataType: "text", //返回数据类型
                     data:data,
                     success: function(msg){
-                        window.location.href = "CustomerViewServlet?method=toWindView";
+                        if("setError" == msg){
+                            $.messager.alert("消息提醒", "风速设置失败(当前系统繁忙或检查您的输入)!", "warning");
+                        } else if("setSuccess" == msg){
+                            // $.messager.alert("消息提醒", "风速设置成功!", "warning");
+                            window.location.href = "CustomerViewServlet?method=toWindView";
+                        }
                     }
-
                 });
             });
 
@@ -51,27 +55,22 @@
 </head>
 <body>
 <br/>
-<p style="font-size: 35px; line-height: 35px; height: 35px;">&nbsp;&nbsp;空调温度调节</p>
+<p style="font-size: 35px; line-height: 35px; height: 35px;">&nbsp;&nbsp;空调风速调节</p>
 <%--&nbsp;&nbsp;&nbsp;&nbsp;--%>
 
 <div class = "row cl">
     <label class="form-label col-5"></label>
-    <p style="font-size: 25px; line-height: 30px; height: 30px;">&nbsp;&nbsp;高费率：1度/元</p>
+    <p style="font-size: 25px; line-height: 30px; height: 30px;">高费率：1度/元 中费率：2度/元 低费率：3度/元</p>
 </div>
 
 <div class = "row cl">
     <label class="form-label col-5"></label>
-    <p style="font-size: 25px; line-height: 30px; height: 30px;">&nbsp;&nbsp;中费率：2度/元</p>
+    <p style="font-size: 25px; line-height: 30px; height: 30px;">提示：0代表低风速，1代表中风速，2代表高风速</p>
 </div>
 
 <div class = "row cl">
     <label class="form-label col-5"></label>
-    <p style="font-size: 25px; line-height: 30px; height: 30px;">&nbsp;&nbsp;低费率：3度/元</p>
-</div>
-
-<div class = "row cl">
-    <label class="form-label col-5"></label>
-    <p style="font-size: 25px; line-height: 30px; height: 30px;">&nbsp;&nbsp;当前风速</p>
+    <p style="font-size: 25px; line-height: 30px; height: 30px;">当前风速</p>
 </div>
 
 <form id="form" class="form form-horizontal" method="post">
@@ -79,7 +78,7 @@
     <div class="row cl">
         <label class="form-label col-5"></label>
         <div class="formControls col-5">
-            <input id="" name="TargetWind" type="text" placeholder="目标风速" class="input-text size-L" style="width: 300px;">
+            <input id="" name="TargetWind" type="text" placeholder="目标风速(2/1/0)" class="input-text size-L" style="width: 300px;">
         </div>
     </div>
 

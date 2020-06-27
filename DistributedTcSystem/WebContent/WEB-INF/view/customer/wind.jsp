@@ -27,33 +27,28 @@
 </head>
 <body>
 <br/>
-<p style="font-size: 35px; line-height: 35px; height: 35px;">&nbsp;&nbsp;空调温度调节</p>
+<p style="font-size: 35px; line-height: 35px; height: 35px;">&nbsp;&nbsp;空调风速调节</p>
 <%--&nbsp;&nbsp;&nbsp;&nbsp;--%>
 
 <div class = "row cl">
     <label class="form-label col-5"></label>
-    <p style="font-size: 25px; line-height: 30px; height: 30px;">&nbsp;&nbsp;高费率：1度/元</p>
-</div>
-
-<div class = "row cl">
-    <label class="form-label col-5"></label>
-    <p style="font-size: 25px; line-height: 30px; height: 30px;">&nbsp;&nbsp;中费率：2度/元</p>
-</div>
-
-<div class = "row cl">
-    <label class="form-label col-5"></label>
-    <p style="font-size: 25px; line-height: 30px; height: 30px;">&nbsp;&nbsp;低费率：3度/元</p>
+    <p style="font-size: 25px; line-height: 30px; height: 30px;">高费率：1度/元 中费率：2度/元 低费率：3度/元</p>
 </div>
 
 <%--当前温度通过数据库查询获得--%>
 <div class = "row cl">
     <label class="form-label col-5"></label>
-    <p style="font-size: 25px; line-height: 30px; height: 30px;">&nbsp;&nbsp;当前温度：数据库查询获取</p>
+    <p style="font-size: 25px; line-height: 30px; height: 30px;">当前温度：<%=application.getAttribute("currentT")%></p>
 </div>
 
 <div class = "row cl">
     <label class="form-label col-5"></label>
-    <p style="font-size: 25px; line-height: 30px; height: 30px;">&nbsp;&nbsp;当前风速：<%=application.getAttribute("targetWind")%></p>
+    <p style="font-size: 25px; line-height: 30px; height: 30px;">当前风速：<%=application.getAttribute("currentWind")%></p>
+</div>
+
+<div class = "row cl">
+    <label class="form-label col-5"></label>
+    <p style="font-size: 25px; line-height: 30px; height: 30px;">目标风速：<%=application.getAttribute("targetWind")%></p>
 </div>
 </body>
 </html>

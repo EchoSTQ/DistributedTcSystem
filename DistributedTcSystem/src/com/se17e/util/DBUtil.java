@@ -9,7 +9,8 @@ import java.sql.SQLException;
 
 //通用的数据操作方法
 public class DBUtil {
-	private static final String URL = "jdbc:mysql://localhost:3306/customs?useSSL=false&serverTimezone=UTC";
+	
+	private static final String URL = "jdbc:mysql://localhost:3306/DTCS?useSSL=false&serverTimezone=GMT%2B8";
 	private static final String USER = "root";
 	private static final String PWD = "mysql";
 	

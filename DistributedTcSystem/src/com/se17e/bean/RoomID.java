@@ -1,17 +1,17 @@
 package com.se17e.bean;
 
 public class RoomID {
-    private String roomID = "roomID";
+    private String RoomID = "roomID";
 
     public RoomID() {
         super();
     }
 
     public void setRoomID(String roomID) {
-        this.roomID = roomID;
+        RoomID = roomID;
     }
 
     public String getRoomID() {
-        return this.roomID;
+        return this.RoomID;
     }
 }
